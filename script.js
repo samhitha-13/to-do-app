@@ -1,18 +1,36 @@
-alert("JS loaded");
-document.addEventListener("DOMContentLoaded", () => {
-  window.addTask = function () {
-    const input = document.getElementById("taskInput");
-    const task = input.value.trim();
+const addBtn = document.getElementById('add-btn');
+const taskInput = document.getElementById('task-input');
+const taskList = document.getElementById('task-list');
 
-    if (task === "") return;
+addBtn.addEventListener('click', () => {
+    const text = taskInput.value;
 
-    const li = document.createElement("li");
-    li.textContent = task;
+    if (text === "") {
+        alert("Enter a task first!");
+        return;
+    }
 
-    li.onclick = () => li.remove();
+    // Create the task element
+    const li = document.createElement('li');
+    
+    li.innerHTML = `
+        <span>${text}</span>
+        <div>
+            <select class="reminder-select">
+                <option>10 min</option>
+                <option>1 hour</option>
+                <option>2 hours</option>
+                <option>1 day</option>
+            </select>
+            <button class="delete-btn" style="margin-left:10px; background:none; border:none; color:red; cursor:pointer;">✕</button>
+        </div>
+    `;
 
-    document.getElementById("taskList").appendChild(li);
+    // Delete functionality
+    li.querySelector('.delete-btn').addEventListener('click', () => {
+        li.remove();
+    });
 
-    input.value = "";
-  };
+    taskList.appendChild(li);
+    taskInput.value = ""; // Clear input
 });
