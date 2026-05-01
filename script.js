@@ -1,3 +1,4 @@
+alert("JS loaded");
 document.addEventListener("DOMContentLoaded", () => {
   window.addTask = function () {
     const input = document.getElementById("taskInput");
