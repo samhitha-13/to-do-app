@@ -1,19 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>To-Do App</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<style>
+  body {
+    background-color: #2e0249; /* Deep Purple */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+  }
 
-  <div class="container">
-    <h1>To-Do List</h1>
-    <input type="text" id="taskInput" placeholder="Enter a task">
-    <button onclick="addTask()">Add</button>
-    <ul id="taskList"></ul>
-  </div>
+  .glass-card {
+    width: 400px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+</style>
 
-  <script src="script.js"></script>
-</body>
-</html>
+<div class="glass-card">
+  <h2>Daily Tasks</h2>
+  <p>10:00 AM - Code Review</p>
+</div>
